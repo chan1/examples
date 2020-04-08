@@ -110,8 +110,8 @@ class ImageSegmentator {
       options = Interpreter.Options()
       options?.threadCount = 2
 #else
-      // Use GPU on real device for inference as this model is fully supported.
-      delegates = [MetalDelegate()]
+      // Use Neural Engine on iPhone Xs and later
+      delegates = [CoreMLDelegate()]
 #endif
 
       do {
